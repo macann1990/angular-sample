@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {CurrencyPipe} from '../../../app/Pipes/currency.pipe';
 import { DataService } from '../../Services/data.service';
+import { ApiService } from '../../Services/api.service';
 import { CarModel } from '../../Models/base.model';
 
 @Component({
@@ -10,6 +11,7 @@ import { CarModel } from '../../Models/base.model';
   providers: [CurrencyPipe]
 })
 export class AppComponent  {
+  apidata:any = [];
   name = 'Angular';
   selectedCarObj: CarModel = {name: '', price: ''};
   selectedCarFromService: CarModel;
@@ -20,11 +22,13 @@ export class AppComponent  {
   {name : "Benz", price: "366,000"},
   ];
 
-  constructor(private sData: DataService) {
+  constructor(private sData: DataService, private apiServ: ApiService) {
   }
 
   ngOnInit() {
     this.sData.carSelection.subscribe(newValue => this.selectedCarFromService = newValue)
+    this.apiServ.getData()
+    .subscribe((data: any) => this.apidata = data);
   }
 
   onCarChange(carObj) {
