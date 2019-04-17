@@ -9,6 +9,10 @@
   <news-feed [selectedCarObject]="selectedCarObj"></news-feed>
   <div>
     <span>API data</span>
-    <span>{{apidata}}</span>
+    <ul>
+      <li *ngFor="let user in userData">
+        {{ user.firstname}} - {{user.email}}
+      </li>
+    </ul>
   </div>
 </div>
