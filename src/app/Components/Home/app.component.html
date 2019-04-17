@@ -1,0 +1,10 @@
+  <h2>Car Street</h2>
+<div>
+  <select [(ngModel)]="selectedCar">
+    <option *ngFor="let car of cars" [ngValue]="car.name" (click)="onCarChange(car)">
+          {{ car.name }}
+    </option>
+  </select>
+  <span class="ml10p">Selected car price is : {{ selectedCarObj.price | currency }}</span>
+  <news-feed [selectedCarObject]="selectedCarObj"></news-feed>
+</div>

@@ -1,0 +1,40 @@
+.body {
+  border: solid 1px black;
+  background-color: black;
+  margin-top: 10px;
+}
+
+.newsHead {
+  color: white;
+  margin-left: 10px;
+}
+
+.newsContent {
+  color: grey;
+}
+
+.marquee {
+    top: 6em;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 10s linear infinite;
+}
+
+.container {
+    width: 18em;
+    height: 8em;
+    margin: 1em auto;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Make it move! */
+@keyframes marquee {
+    from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-200%);
+  }
+}
