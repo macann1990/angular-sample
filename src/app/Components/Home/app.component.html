@@ -10,8 +10,8 @@
   <div>
     <span>API data</span>
     <ul>
-      <li *ngFor="let user in userData">
-        {{ user.firstname}} - {{user.email}}
+      <li *ngFor="let user of userData">
+        <b>{{ user.firstname}}</b> :  {{user.email}}
       </li>
     </ul>
   </div>
