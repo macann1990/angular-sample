@@ -5,6 +5,6 @@
           {{ car.name }}
     </option>
   </select>
-  <span class="ml10p">Selected car price is : {{ selectedCarObj.price | currency }}</span>
+  <span class="ml10p" *ngIf="selectedCarObj.name != ''">Selected car price is : {{ selectedCarObj.price | currency }}</span>
   <news-feed [selectedCarObject]="selectedCarObj"></news-feed>
 </div>
